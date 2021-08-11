@@ -1,10 +1,10 @@
 <template>
-	<div v-if="!avatar" class="circle d-flex justify-content-center align-items-center mx-2">
+	<div v-if="!avatar" class="circle d-flex justify-content-center align-items-center m-2">
 		<span>{{ abreviationFirstName }}</span>
     <span>{{ abreviationLastName }}</span>
 	</div>
   <div v-else class="mx-2">
-    <img :src="avatar" :alt="ll">
+    <img :src="avatar" :alt="avatar">
   </div>
 </template>
 
@@ -47,16 +47,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/styles/vars';
-
-.circle {
-  width: 32px;
-  height: 32px;
-  font-size: 16px;
-  border-radius: 50%;
-  color: $grey1;
-  background-color: $white;
-}
-
 
 img {
   width: 40px;

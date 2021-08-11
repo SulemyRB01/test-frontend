@@ -2,5 +2,36 @@
 
 html,
 body {
-    background-color: $black;
+  background-color: $black;
+  color: $white !important;
+}
+
+.circle {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  border-radius: 50%;
+  color: $grey1;
+  background-color: $white;
+}
+
+tbody tr {
+  background-color: $grey;
+
+  td:nth-child(1) {
+    border-radius: 10px 0 0 10px;
+  }
+
+  td:nth-last-child(1) {
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}  
+
+cursor-pointer {
+  cursor: pointer;
 }
