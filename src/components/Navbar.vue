@@ -1,23 +1,26 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light py-4 px-lg-5">
-    <div class="container-fluid">
-      <div class="name-company"> 
-        <span class="name-company-uno">Integra</span>
-        <span class="name-company-dos">Software</span>
-      </div>
-      <div class="d-flex justify-content-end w-100 align-items-center">
-        <div><span class="name">{{ nameUser }}</span></div>
-        <Avatar :firstName="'Sulemy Guadalupe'" :lastName="'Rodriguez Bojorquez'" :avatar="''"/>
-        <div
-          :class="[!isVisibilityProfile ? 'rotate-icon' : '']"
-          @click="showProfile">
-          <i class="bi bi-chevron-down"></i>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div class="name-company"> 
+          <span class="name-company-uno">Integra</span>
+          <span class="name-company-dos">Software</span>
         </div>
-        <div v-if="!isVisibilityProfile" class="profile">
-          <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">Ver Perfil</a>
-            <a href="#" class="list-group-item list-group-item-action">Cambiar contraseña</a>
-            <a href="#" class="list-group-item list-group-item-action">Cerrar sesion</a>
+        <div class="d-flex align-items-center">
+          <div><span class="name">{{ nameUser }}</span></div>
+          <Avatar :firstName="'Sulemy Guadalupe'" :lastName="'Rodriguez Bojorquez'" :avatar="''"/>
+          <div
+            class="icono-cursor-pinter"
+            :class="[!isVisibilityProfile ? 'rotate-icon' : '']"
+            @click="showProfile">
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div v-if="!isVisibilityProfile" class="profile">
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">Ver Perfil</a>
+              <a href="#" class="list-group-item list-group-item-action">Cambiar contraseña</a>
+              <a href="#" class="list-group-item list-group-item-action">Cerrar sesion</a>
+            </div>
           </div>
         </div>
       </div>
@@ -97,6 +100,10 @@ i {
 
 .list-group a {
   color: $grey;
+}
+
+.icono-cursor-pinter {
+  cursor: pointer;
 }
 </style>
 
