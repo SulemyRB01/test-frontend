@@ -14,11 +14,11 @@ export default createStore({
     },
     setErrorToken (state, errorResponse) {
       if (errorResponse >= 400 && errorResponse <= 499){
-        state.errorToken = 'La dirección o la contraseña son incorrectas.'
+        state.errorToken = 'El correo o la contraseña son incorrectas.'
       }
 
       if (errorResponse >= 500 && errorResponse <= 599) {
-        state.errorToken = 'Hubo un error con el servidor por favor intentalo más tarde.'
+        state.errorToken = 'Hubo un error con el servidor, por favor intentalo más tarde.'
       }
     },
     setUsers (state, infoResponse) {
