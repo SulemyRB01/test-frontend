@@ -37,9 +37,6 @@ export default {
         return this.lastName.slice(0, 1).toUpperCase()
       }
       return this.LastName;
-    },
-    backgroundColor() {
-      return '#fefdfe'
     }
   }
 }
@@ -52,8 +49,6 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
 }
 	
 </style>

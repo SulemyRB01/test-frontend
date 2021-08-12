@@ -1,7 +1,7 @@
 <template>
-  <div id="nav">
+  <div v-if="$route.name != 'Not found' && $route.name != 'Login'" id="nav">
     <!-- Navbar -->
-    <Navbar :nameUser="'Hola mundo'"/>
+    <Navbar :nameUser="'Sulemy Rodriguez'"/>
     <!-- Menu breadcrumb -->
     <nav class="container pt-4 ps-4" aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -30,6 +30,7 @@
         class="fs-4 fw-bold"
         :class="{'container ps-4' : crumbs.length < 2 }">
         <i v-if="crumbs.length > 2" class="bi bi-search"></i>
+        <i v-if="$route.path == '/Users'" class="bi bi-list-ul"></i>
         {{ $route.meta.publicName }}
       </div>
     </div>
@@ -49,7 +50,6 @@ export default {
   },
   computed: {
     crumbs () {
-      console.log(this.$route.matched.length)
       return this.$route.matched
     }
   }

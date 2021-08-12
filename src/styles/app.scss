@@ -6,6 +6,7 @@ body {
   color: $white !important;
 }
 
+//Avatar and Back
 .circle {
   width: 32px;
   height: 32px;
@@ -14,6 +15,12 @@ body {
   color: $grey1;
   background-color: $white;
 }
+
+//Table
+table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+} 
 
 tbody tr {
   background-color: $grey;
@@ -25,13 +32,24 @@ tbody tr {
   td:nth-last-child(1) {
     border-radius: 0 10px 10px 0;
   }
+} 
+
+//Cursor pointer
+.cursor-pointer {
+  cursor: pointer;
 }
 
-table {
-  border-collapse: separate;
-  border-spacing: 0 8px;
-}  
+//Nombre de la compañia
+.name-company {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: normal;
+}
 
-cursor-pointer {
-  cursor: pointer;
+.name-company-integra {
+  color: $white;
+}
+
+.name-company-software {
+  color: $green;
 }
