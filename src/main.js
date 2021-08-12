@@ -5,5 +5,10 @@ import store from './store'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 import './styles/app.scss'
+import VueClickAway from "vue3-click-away"
 
-createApp(App).use(store).use(router).mount('#app')
+const app = createApp(App)
+app.use(store)
+app.use(router)
+app.use(VueClickAway)
+app.mount('#app')

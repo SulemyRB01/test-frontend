@@ -1,10 +1,10 @@
 <template>
   <div>
     <button 
-      :type="type" 
+      :type="type"
+      :class="{'large': large}"
       class="btn btn-outline-success"
       :disabled="disabled"
-      @click="handleClick"
       >
       <slot name="icon"/>
       {{ text }}
@@ -28,16 +28,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
-    }
-  },
-  methods: {
-    handleClick (event) {
-      if (this.disabled) {
-        event.preventDefault()
-        event.stopPropagation()
-      } else {
-        this.$emit('click', event)
-      }
+    },
+    large: {
+      type: Boolean,
+      defaul: false
     }
   }
 }
@@ -49,6 +43,10 @@ export default {
 .btn-outline-success {
   color: $white;
   border-color: $green;
+}
+
+.large {
+  width: 100%;
 }
   
 </style>
