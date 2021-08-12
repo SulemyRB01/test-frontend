@@ -1,7 +1,7 @@
 <template>
 	<div v-if="!avatar" class="circle d-flex justify-content-center align-items-center m-2">
-		<span>{{ abreviationFirstName }}</span>
-    <span>{{ abreviationLastName }}</span>
+		<span>{{ abbreviationFirstName }}</span>
+    <span>{{ abbreviationLastName }}</span>
 	</div>
   <div v-else class="mx-2">
     <img :src="avatar" :alt="avatar">
@@ -26,13 +26,13 @@ export default {
     }
   },
   computed: {
-    abreviationFirstName() {
+    abbreviationFirstName() {
       if(this.firstName) {
         return this.firstName.slice(0, 1).toUpperCase()
       }
       return this.firstName
     },
-    abreviationLastName() {
+    abbreviationLastName() {
       if(this.lastName) {
         return this.lastName.slice(0, 1).toUpperCase()
       }

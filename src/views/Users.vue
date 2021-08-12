@@ -46,7 +46,7 @@
                     maxlength="30">
                 </div>
                 <div class="d-flex pt-4 justify-content-end">
-                  <Button class="pe-2" :type="'submit'" :text="'Guardar'"/>
+                  <Button class="pe-2" :type="'submit'" :disabled="!inputName || !inputComments" :text="'Guardar'"/>
                   <button type="button" class="btn btn btn-outline-secondary text-white" data-bs-dismiss="modal">Cancelar</button>
                 </div>
               </form>

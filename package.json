@@ -1,6 +1,10 @@
 {
   "name": "test-frontend",
   "version": "0.1.0",
+  "author": { 
+    "name": "Sulemy Rodríguez",
+    "email": "surodriguez408@gmail.com"
+  },
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
