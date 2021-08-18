@@ -31,9 +31,7 @@
             <td>{{ info.fecha_final}}</td>
             <td>{{ info.usuario }}</td>
             <td class="text-center">
-              <div @click="download(info.url)">
-              <i class="bi bi-file-earmark-arrow-down-fill text-white cursor-pointer"></i>
-              </div>
+              <Tooltip :textTooltip="'Descargar'" :classIcon="'bi bi-file-earmark-arrow-down-fill text-white'" @click="download(info.url)"/>
             </td>
             <td><i class="bi bi-chevron-right text-white"></i></td>
           </tr>
@@ -45,11 +43,13 @@
 
 <script>
 import Button from '@/components/Button'
+import Tooltip from '@/components/Tooltip'
 
 export default {
   name: 'GroupCredits',
   components: {
-    Button
+    Button,
+    Tooltip
   },
   data () {
     return {

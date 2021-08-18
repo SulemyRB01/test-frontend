@@ -46,8 +46,8 @@
                     maxlength="30">
                 </div>
                 <div class="d-flex pt-4 justify-content-end">
-                  <Button class="pe-2" :type="'submit'" :disabled="!inputName || !inputComments" :text="'Guardar'"/>
-                  <button type="button" class="btn btn btn-outline-secondary text-white" data-bs-dismiss="modal">Cancelar</button>
+                  <Button class="pe-2" :type="'submit'" :disabled="!inputName || !inputComments" :text="'Guardar'" data-bs-dismiss="modal"/>
+                  <button type="button" class="btn btn btn-outline-secondary text-white" data-bs-dismiss="modal" @click="cancelModal">Cancelar</button>
                 </div>
               </form>
             </div>
@@ -75,10 +75,8 @@
           <td class="pt-3 ps-4"><Number :id="(user.id).toString()"/></td>
           <td class="pt-3">{{ user.name }}</td>
           <td class="pt-3">{{ user.comments }}</td>
-          <td class="pt-3">
-            <div class="cursor-pointer" @click="remove(user.id)">
-              <i class="bi bi-trash ps-4 text-white"></i>
-            </div>
+          <td class="pt-3 ps-4">
+            <Tooltip :textTooltip="'Eliminar'" :classIcon="'bi bi-trash text-white'" @click="remove(user.id)"/>
           </td>
         </tr>
       </tbody>
@@ -90,13 +88,15 @@
 <script>
 import Button from '@/components/Button'
 import Number from '@/components/Number'
+import Tooltip from '@/components/Tooltip'
 import { mapActions } from 'vuex'
 
 export default {
   name: 'Users',
   components: {
     Number,
-    Button
+    Button,
+    Tooltip
   },
   data () {
     return {
@@ -122,17 +122,20 @@ export default {
   methods: {
     ...mapActions(['getUsers']),
     async create () {
-      this.isCreate = true
-      this.closeModal()
       await this.$store.dispatch('createUser', { name: this.inputName, comments: this.inputComments })
       await this.$store.dispatch('getUsers')
+      this.cleanFields()
     },
     async remove (id) {
       await this.$store.dispatch('deleteUser', { id: id })
       await this.$store.dispatch('getUsers')
     },
-    closeModal () {
-      document.getElementById('close').click();
+    cleanFields () {
+      this.inputName = ''
+      this.inputComments = ''
+    },
+    cancelModal () {
+      this.cleanFields()
     }
   }
 }
