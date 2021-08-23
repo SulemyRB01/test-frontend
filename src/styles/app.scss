@@ -1,0 +1,55 @@
+@import 'vars';
+
+html,
+body {
+  background-color: $black;
+  color: $white !important;
+}
+
+//Avatar and Back
+.circle {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  border-radius: 50%;
+  color: $grey1;
+  background-color: $white;
+}
+
+//Table
+table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+} 
+
+tbody tr {
+  background-color: $grey;
+
+  td:nth-child(1) {
+    border-radius: 10px 0 0 10px;
+  }
+
+  td:nth-last-child(1) {
+    border-radius: 0 10px 10px 0;
+  }
+} 
+
+//Cursor pointer
+.cursor-pointer {
+  cursor: pointer;
+}
+
+//Nombre de la compañia
+.name-company {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.name-company-integra {
+  color: $white;
+}
+
+.name-company-software {
+  color: $green;
+}

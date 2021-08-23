@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div v-if="routeName == 'Home'" class="container ps-4">
+    <Button :text="'Buscar créditos grupales'" @click="showGroupCredits"/>
   </div>
+  <router-view />
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Button from '@/components/Button'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+   components: {
+    Button
+  },
+  methods: {
+    showGroupCredits () {
+      this.$router.push({path: '/GroupCredits'})
+    }
+  },
+  computed: {
+    routeName() {
+      return this.$route.name
+    }
   }
 }
 </script>
